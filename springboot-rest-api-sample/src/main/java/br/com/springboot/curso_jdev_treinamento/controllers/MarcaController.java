@@ -26,49 +26,45 @@ public class MarcaController {
 
 	@Autowired
 	private MarcaRepository marcaRepository;
-	
 
-	
+	/*
+	 * =============================================================================
+	 * ===================================================
+	 */
 
-/*================================================================================================================================*/
-	
-/*=================================================MARCA===================================================================*/
-	
-	
-	
+	/*
+	 * =================================================MARCA=======================
+	 * ============================================
+	 */
+
 	@PostMapping(value = "salvarMarca")
-	@ResponseBody  
+	@ResponseBody
 	public ResponseEntity<Marca> salvarMarca(@RequestBody Marca marca) /* Recebe os dados para salvar */ {
 
 		Marca mar = marcaRepository.save(marca);
 
 		return new ResponseEntity<Marca>(mar, HttpStatus.CREATED);
 	}
-		
-	
-	
+
 	@GetMapping(value = "getMarcaid")
-	@ResponseBody  
-	public ResponseEntity<Marca> getMarcaid (@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
+	@ResponseBody
+	public ResponseEntity<Marca> getMarcaid(@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
 		Marca id1 = marcaRepository.findById(id).get();
 
 		return new ResponseEntity<Marca>(id1, HttpStatus.OK);
 	}
-	
-	
-	
+
 	@GetMapping(value = "getMarca")
-	@ResponseBody  
-	public ResponseEntity<List<Marca>> getMarca (@RequestParam(name = "marc") String marc1) /* Recebe os dados para consultar */ {
+	@ResponseBody
+	public ResponseEntity<List<Marca>> getMarca(
+			@RequestParam(name = "marc") String marc1) /* Recebe os dados para consultar */ {
 
 		List<Marca> marc = marcaRepository.getMarca(marc1.trim().toUpperCase());
 
 		return new ResponseEntity<List<Marca>>(marc, HttpStatus.OK);
 	}
-	
-	
-	
+
 	@GetMapping(value = "getEveryMarca")
 	@ResponseBody
 	public ResponseEntity<List<Marca>> getEveryMarca() {
@@ -78,22 +74,18 @@ public class MarcaController {
 		return new ResponseEntity<List<Marca>>(mar, HttpStatus.OK);
 
 	}
-	
-	
-	
+
 	@DeleteMapping(value = "deleteMarca")
-	@ResponseBody  
+	@ResponseBody
 	ResponseEntity<String> deleteMarca(@RequestParam Long id) /* Recebe os dados para salvar */ {
 
 		marcaRepository.deleteById(id);
 
 		return new ResponseEntity<String>("User deletado com sucesso ", HttpStatus.OK);
 	}
-	
-	
-	
+
 	@PutMapping(value = "atualizarMarca")
-	@ResponseBody  
+	@ResponseBody
 	public ResponseEntity<?> atualizarMarca(@RequestBody Marca marca) /* Recebe os dados para salvar */ {
 
 		if (marca.getId() == null) {
@@ -104,8 +96,4 @@ public class MarcaController {
 
 		return new ResponseEntity<Marca>(mar, HttpStatus.OK);
 	}
-	
-
-
-	
 }
