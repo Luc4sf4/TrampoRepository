@@ -24,7 +24,7 @@ public class AlturaController {
 	@ResponseBody
 	public ResponseEntity<Altura> salvarAltura(@RequestBody Altura alt) {
 
-		Altura altu = alturaRepository.save(alt);
+		 alturaRepository.save(alt);
 		
 		return new ResponseEntity<Altura>(alt, HttpStatus.CREATED);
 	}
