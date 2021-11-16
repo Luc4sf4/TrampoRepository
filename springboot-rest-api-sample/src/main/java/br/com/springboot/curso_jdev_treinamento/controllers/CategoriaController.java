@@ -58,7 +58,8 @@ public class CategoriaController {
 
 	@PostMapping(value = "salvarCategoria")
 	@ResponseBody
-	public ResponseEntity<Categoria> salvarCategoria(@RequestBody Categoria categoria) /* Recebe os dados para salvar */ {
+	public ResponseEntity<Categoria> salvarCategoria(
+			@RequestBody Categoria categoria) /* Recebe os dados para salvar */ {
 
 		Categoria cat = categoriaRepository.save(categoria);
 
