@@ -26,7 +26,7 @@ public class AlturaController {
 
 		Altura altu = alturaRepository.save(alt);
 		
-		return new ResponseEntity<Altura>(alt, HttpStatus.CREATED);
+		return new ResponseEntity<Altura>(altu, HttpStatus.CREATED);
 	}
 
 	
