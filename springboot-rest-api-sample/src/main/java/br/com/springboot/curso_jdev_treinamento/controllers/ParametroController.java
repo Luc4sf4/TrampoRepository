@@ -2,8 +2,6 @@ package br.com.springboot.curso_jdev_treinamento.controllers;
 
 import java.util.List;
 
-import javax.xml.ws.Response;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,21 +10,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.springboot.curso_jdev_treinamento.model.Parametros;
-import br.com.springboot.curso_jdev_treinamento.model.Usuario;
 import br.com.springboot.curso_jdev_treinamento.repository.ParametroRepository;
 
+@RequestMapping("parametros")
 @RestController
 public class ParametroController {
 
 	@Autowired
 	private ParametroRepository paramRepository;
 
-	@PostMapping(value = "salvarParametro")
+	@PostMapping()
 	@ResponseBody
 	public ResponseEntity<Parametros> salvarParametro(@RequestBody Parametros param) {
 
@@ -36,30 +35,27 @@ public class ParametroController {
 
 	}
 
-	@GetMapping(value = "getParametro")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<Parametros>> getEveryParametro() {
 
 		List<Parametros> param1 = paramRepository.findAll();
 
 		return new ResponseEntity<List<Parametros>>(param1, HttpStatus.OK);
-	
+
 	}
-	
-	@GetMapping(value= "buscarParametroid")
+
+	@GetMapping(value = "/id")
 	@ResponseBody
-	public ResponseEntity<Parametros> buscarParametroid (@RequestParam (name = "id") Long id){
-		
+	public ResponseEntity<Parametros> buscarParametroid(@RequestParam(name = "id") Long id) {
+
 		Parametros parametro = paramRepository.findById(id).get();
-		
+
 		return new ResponseEntity<Parametros>(parametro, HttpStatus.OK);
-		
-		
+
 	}
-	
 
-
-	@DeleteMapping(value = "deleteParametro")
+	@DeleteMapping
 	@ResponseBody
 	ResponseEntity<String> deleteParametro(@RequestParam Long id) {
 
@@ -69,7 +65,7 @@ public class ParametroController {
 
 	}
 
-	@PutMapping(value = "atualizarParam")
+	@PutMapping()
 	@ResponseBody
 	public ResponseEntity<?> autalizarParam(@RequestBody Parametros param) {
 

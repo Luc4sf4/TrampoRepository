@@ -163,7 +163,7 @@
 
 						$.ajax({
 							method : "POST",
-							url : "salvarParametro",
+							url : "parametros",
 							data : JSON.stringify({
 
 								id : id,
@@ -193,7 +193,7 @@
 								.ajax(
 										{
 											method : "GET",
-											url : "getParametro",
+											url : "parametros",
 											data : "param1=" + parametro1,
 											data : "param2=" + parametro2,
 
@@ -231,7 +231,7 @@
 					function colocarEmEdicao(id) {
 						$.ajax({
 							method : "GET",
-							url : "buscarParametroid",
+							url : "parametros/id",
 							data : "id=" + id,
 
 							success : function(response) {
@@ -261,7 +261,7 @@
 							$
 									.ajax({
 										method : "DELETE",
-										url : "deleteParametro",
+										url : "parametros",
 										data : "id=" + id,
 
 										success : function(response) {
