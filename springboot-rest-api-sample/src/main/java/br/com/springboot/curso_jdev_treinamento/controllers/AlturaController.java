@@ -8,19 +8,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Altura;
 import br.com.springboot.curso_jdev_treinamento.repository.AlturaRepository;
 
+
+
+
+
+@RequestMapping ("altura")
 @RestController
 public class AlturaController {
 
 	private AlturaRepository alturaRepository;
 	
 
-	@PostMapping(value = "salvarAltura")
+	
+	@PostMapping()
 	@ResponseBody
 	public ResponseEntity<Altura> salvarAltura(@RequestBody Altura alt) {
 
@@ -31,7 +38,7 @@ public class AlturaController {
 
 	
 
-	@DeleteMapping(value = "deleteAltura")
+	@DeleteMapping()
 	@ResponseBody
 	ResponseEntity<String> deleteAltura(@RequestParam Long id)  {
 
