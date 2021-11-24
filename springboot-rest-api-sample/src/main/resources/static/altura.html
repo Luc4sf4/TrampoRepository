@@ -112,7 +112,7 @@
 
 									<div class="mb-3"></div>
 									<button type="button" class="btn btn-success"
-										onclick="getListCategoria()">Buscar</button>
+										onclick="getListAltura()">Buscar</button>
 
 								</form>
 
@@ -149,13 +149,13 @@
 
 
 				<script type="text/javascript">
-					function salvarParametro() {
+					function salvarAltura() {
 
 						var id = $('#id').val();
 
-						var parametro1 = $('#parametro1H').val();
+						var altura = $('#alturaH').val();
 
-						var parametro2 = $('#parametro2H').val();
+						var status = $('#status').val();
 
 						$.ajax({
 							method : "POST",
@@ -163,8 +163,8 @@
 							data : JSON.stringify({
 
 								id : id,
-								parametro1 : parametro1,
-								parametro2 : parametro2
+								altura : description,
+								status : status
 
 							}),
 							contentType : "application/json; charset= utf-8",
@@ -181,17 +181,15 @@
 
 					function getListCategoria() {
 
-						var parametro1 = $('#parametro1H').val();
+						var altura = $('#alturaH').val();
 
-						var parametro2 = $('#parametro2H').val();
 
 						$
 								.ajax(
 										{
 											method : "GET",
-											url : "parametros",
-											data : "param1=" + parametro1,
-											data : "param2=" + parametro2,
+											url : "altura",
+											data : "altura=" + altura,
 
 											success : function(response) {
 
@@ -207,7 +205,7 @@
 																	'<tr id="'+response[i].id+'"><td>'
 																			+ response[i].id
 																			+ '</td><td>'
-																			+ response[i].parametro1	+ '</td><td>'+ response[i].parametro2
+																			+ response[i].description
 																			+ '</td><td>'
 																			+ response[i].status
 																			+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
@@ -227,7 +225,7 @@
 					function colocarEmEdicao(id) {
 						$.ajax({
 							method : "GET",
-							url : "parametros/id",
+							url : "altura/id",
 							data : "id=" + id,
 
 							success : function(response) {
@@ -236,9 +234,7 @@
 
 								$('#status').val(response.status);
 
-								$('#parametro1H').val(response.parametro1);
-
-								$('#parametro2H').val(response.parametro2);
+								$('#alturaH').val(response.description);
 
 								$('#modalbuscarPorStatus').modal('hide');
 
@@ -257,7 +253,7 @@
 							$
 									.ajax({
 										method : "DELETE",
-										url : "parametros",
+										url  : "parametros",
 										data : "id=" + id,
 
 										success : function(response) {

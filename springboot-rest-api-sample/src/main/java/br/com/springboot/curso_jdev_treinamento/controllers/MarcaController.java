@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Marca;
 import br.com.springboot.curso_jdev_treinamento.repository.MarcaRepository;
 
-/**
- *
- * A sample greetings controller to return greeting text
- */
+
+
+@RequestMapping("marca")
 @RestController
 public class MarcaController {
 
@@ -36,7 +36,7 @@ public class MarcaController {
 	
 	
 	
-	@PostMapping(value = "salvarMarca")
+	@PostMapping()
 	@ResponseBody  
 	public ResponseEntity<Marca> salvarMarca(@RequestBody Marca marca) /* Recebe os dados para salvar */ {
 
@@ -47,7 +47,7 @@ public class MarcaController {
 		
 	
 	
-	@GetMapping(value = "getMarcaid")
+	@GetMapping(value = "/id")
 	@ResponseBody  
 	public ResponseEntity<Marca> getMarcaid (@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
@@ -56,20 +56,9 @@ public class MarcaController {
 		return new ResponseEntity<Marca>(id1, HttpStatus.OK);
 	}
 	
+		
 	
-	
-	@GetMapping(value = "getMarca")
-	@ResponseBody  
-	public ResponseEntity<List<Marca>> getMarca (@RequestParam(name = "marc") String marc1) /* Recebe os dados para consultar */ {
-
-		List<Marca> marc = marcaRepository.getMarca(marc1.trim().toUpperCase());
-
-		return new ResponseEntity<List<Marca>>(marc, HttpStatus.OK);
-	}
-	
-	
-	
-	@GetMapping(value = "getEveryMarca")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<Marca>> getEveryMarca() {
 
@@ -81,7 +70,7 @@ public class MarcaController {
 	
 	
 	
-	@DeleteMapping(value = "deleteMarca")
+	@DeleteMapping()
 	@ResponseBody  
 	ResponseEntity<String> deleteMarca(@RequestParam Long id) /* Recebe os dados para salvar */ {
 
@@ -92,7 +81,7 @@ public class MarcaController {
 	
 	
 	
-	@PutMapping(value = "atualizarMarca")
+	@PutMapping()
 	@ResponseBody  
 	public ResponseEntity<?> atualizarMarca(@RequestBody Marca marca) /* Recebe os dados para salvar */ {
 

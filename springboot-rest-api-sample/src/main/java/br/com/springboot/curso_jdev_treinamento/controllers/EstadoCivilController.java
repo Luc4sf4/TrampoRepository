@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.EstadoCivil;
 import br.com.springboot.curso_jdev_treinamento.repository.EstadoCivilRepository;
 
-/**
- *
- * A sample greetings controller to return greeting text
- */
+@RequestMapping("EstadoCivil")
 @RestController
 public class EstadoCivilController {
 
@@ -31,7 +29,7 @@ public class EstadoCivilController {
 	
 
 
-	@PostMapping(value = "salvarEstado")
+	@PostMapping()
 	@ResponseBody  
 	public ResponseEntity<EstadoCivil> salvarEstado(@RequestBody EstadoCivil estado) /* Recebe os dados para salvar */ {
 
@@ -42,7 +40,7 @@ public class EstadoCivilController {
 	
 	
 
-	@DeleteMapping(value = "deleteEstado")
+	@DeleteMapping()
 	@ResponseBody  
 	ResponseEntity<String> deleteEstado(@RequestParam Long id) /* Recebe os dados para salvar */ {
 
@@ -53,7 +51,7 @@ public class EstadoCivilController {
 	
 	
 
-	@PutMapping(value = "atualizarEstado")
+	@PutMapping()
 	@ResponseBody  
 	public ResponseEntity<?> atualizarEstado(@RequestBody EstadoCivil estado) /* Recebe os dados para salvar */ {
 
@@ -68,7 +66,7 @@ public class EstadoCivilController {
 	
 	
 	
-	@GetMapping(value = "getEstadoid")
+	@GetMapping(value = "/id")
 	@ResponseBody  
 	public ResponseEntity<EstadoCivil> getEstadoid (@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
@@ -79,18 +77,9 @@ public class EstadoCivilController {
 	
 	
 
-	@GetMapping(value = "getEstado")
-	@ResponseBody  
-	public ResponseEntity<List<EstadoCivil>> getEstado (@RequestParam(name = "estado") String est) /* Recebe os dados para consultar */ {
-
-		List<EstadoCivil> est1 = estadoRepository.getEstado(est.trim().toUpperCase());
-
-		return new ResponseEntity<List<EstadoCivil>>(est1, HttpStatus.OK);
-	}
-	
 	
 
-	@GetMapping(value = "getEveryEstado")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<EstadoCivil>> getEveryEstado() {
 

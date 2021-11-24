@@ -10,18 +10,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.com.springboot.curso_jdev_treinamento.model.TipoEnvio;
 import br.com.springboot.curso_jdev_treinamento.repository.EnvioRepository;
 
+@RequestMapping("envio")
+@RestController
 public class TipoEnvioController {
 
+	
+	
 	@Autowired
 	private EnvioRepository envioRepository;
 
-	@PostMapping(value = "saveEnvio")
+	@PostMapping()
 	@ResponseBody
 	public ResponseEntity<TipoEnvio> saveEnvio(@RequestBody TipoEnvio envio) {
 
@@ -31,17 +37,7 @@ public class TipoEnvioController {
 
 	}
 
-	@GetMapping(value = "getEnvio")
-	@ResponseBody
-	public ResponseEntity<List<TipoEnvio>> getEnvio(@RequestParam(name = "envio") String envio) {
-
-		List<TipoEnvio> env = envioRepository.getEnvio(envio.trim().toUpperCase());
-
-		return new ResponseEntity<List<TipoEnvio>>(env, HttpStatus.OK);
-
-	}
-
-	@GetMapping(value = "getEveryEnvio")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<TipoEnvio>> getEveryEnvio() {
 
@@ -51,7 +47,7 @@ public class TipoEnvioController {
 
 	}
 
-	@GetMapping(value = "getEnvioId")
+	@GetMapping(value = "/id")
 	@ResponseBody
 	public ResponseEntity<TipoEnvio> getEnvioId(@RequestParam(name = "id") Long id) {
 
@@ -61,7 +57,7 @@ public class TipoEnvioController {
 
 	}
 
-	@PutMapping(value = "updateEnvio")
+	@PutMapping()
 	@ResponseBody
 	public ResponseEntity<?> updateEnvio(@RequestBody TipoEnvio envio) {
 
@@ -77,7 +73,7 @@ public class TipoEnvioController {
 	}
 
 	
-	@DeleteMapping (value = "deleteEnvio")
+	@DeleteMapping ()
 	@ResponseBody
 	public ResponseEntity<String> deleteEnvio (@RequestParam Long id){
 		

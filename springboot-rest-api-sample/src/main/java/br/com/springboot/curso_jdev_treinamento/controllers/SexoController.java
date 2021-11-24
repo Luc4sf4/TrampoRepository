@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Sexo;
 import br.com.springboot.curso_jdev_treinamento.repository.SexoRepository;
 
-/**
- *
- * A sample greetings controller to return greeting text
- */
+@RequestMapping("sexo")
 @RestController
 public class SexoController {
 
@@ -31,7 +29,7 @@ public class SexoController {
 
 
 
-	@GetMapping(value = "getListSexo")
+	@GetMapping()
 	@ResponseBody  
 	public ResponseEntity<List<Sexo>> getListSexo(
 			@RequestParam(name = "sexo") String sexo)  {
@@ -42,7 +40,7 @@ public class SexoController {
 	}
 	
 	
-	@GetMapping(value = "getSexobyId")
+	@GetMapping(value = "/id")
 	@ResponseBody  
 	public ResponseEntity<Sexo> getSexobyId(
 			@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
@@ -52,18 +50,7 @@ public class SexoController {
 		return new ResponseEntity<Sexo>(item, HttpStatus.OK);
 	}
 
-	@PostMapping(value = "salvarStatus")
-	@ResponseBody  
-	public ResponseEntity<Sexo> salvar(@RequestBody Sexo status) /* Recebe os dados para salvar */ {
-
-	 sexoRepository.save(status);
-
-		return new ResponseEntity<Sexo>(status, HttpStatus.CREATED);
-	}
-
-	
-
-	@DeleteMapping(value = "deleteS")
+	@DeleteMapping()
 	@ResponseBody  
 	ResponseEntity<String> deleteS(@RequestParam Long idS) /* Recebe os dados para salvar */ {
 
@@ -72,7 +59,7 @@ public class SexoController {
 		return new ResponseEntity<String>("User deletado com sucesso ", HttpStatus.OK);
 	}
 
-	@PostMapping(value = "salvarSexo")
+	@PostMapping()
 	@ResponseBody  
 	public ResponseEntity<Sexo> salvarSexo(@RequestBody Sexo description) /* Recebe os dados para salvar */ {
 
@@ -81,7 +68,7 @@ public class SexoController {
 		return new ResponseEntity<Sexo>(description, HttpStatus.CREATED);
 	}
 
-	@PutMapping(value = "atualizarS")
+	@PutMapping()
 	@ResponseBody  
 	public ResponseEntity<?> atualizarS(@RequestBody Sexo status) /* Recebe os dados para salvar */ {
 

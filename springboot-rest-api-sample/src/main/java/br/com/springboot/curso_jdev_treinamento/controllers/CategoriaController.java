@@ -10,23 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Categoria;
 import br.com.springboot.curso_jdev_treinamento.repository.CategoriaRepository;
 
-/**
- *
- * A sample greetings controller to return greeting text
- */
+@RequestMapping ("categoria ") 
 @RestController
 public class CategoriaController {
 
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 
-	@GetMapping(value = "getcategoriaid")
+	@GetMapping(value = "/id")
 	@ResponseBody
 	public ResponseEntity<Categoria> getcategoriaid(
 			@RequestParam(name = "iduser") Long id) /* Recebe os dados para consultar */ {
@@ -36,7 +34,7 @@ public class CategoriaController {
 		return new ResponseEntity<Categoria>(id1, HttpStatus.OK);
 	}
 
-	@GetMapping(value = "getEveryCategoria")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<Categoria>> getEveryCategoria() {
 
@@ -46,17 +44,7 @@ public class CategoriaController {
 
 	}
 
-	@GetMapping(value = "getCategoria")
-	@ResponseBody
-	public ResponseEntity<List<Categoria>> getCategoria(
-			@RequestParam(name = "cat") String cat) /* Recebe os dados para consultar */ {
-
-		List<Categoria> usuario = categoriaRepository.getCategoria(cat.trim().toUpperCase());
-
-		return new ResponseEntity<List<Categoria>>(usuario, HttpStatus.OK);
-	}
-
-	@PostMapping(value = "salvarCategoria")
+	@PostMapping()
 	@ResponseBody
 	public ResponseEntity<Categoria> salvarCategoria(
 			@RequestBody Categoria categoria) /* Recebe os dados para salvar */ {
@@ -66,7 +54,7 @@ public class CategoriaController {
 		return new ResponseEntity<Categoria>(cat, HttpStatus.CREATED);
 	}
 
-	@DeleteMapping(value = "deleteCategoria")
+	@DeleteMapping()
 	@ResponseBody
 	ResponseEntity<String> deleteCategoria(@RequestParam Long id) /* Recebe os dados para salvar */ {
 
@@ -75,7 +63,7 @@ public class CategoriaController {
 		return new ResponseEntity<String>("User deletado com sucesso ", HttpStatus.OK);
 	}
 
-	@PutMapping(value = "atualizarCategoria")
+	@PutMapping()
 	@ResponseBody
 	public ResponseEntity<?> atualizarCategoria(@RequestBody Categoria categoria) /* Recebe os dados para salvar */ {
 

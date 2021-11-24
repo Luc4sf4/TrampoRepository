@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Estilo;
 import br.com.springboot.curso_jdev_treinamento.repository.EstiloRepository;
 
+
+
+@RequestMapping("estilo")
 @RestController
 public class EstiloController {
 
@@ -29,7 +33,7 @@ public class EstiloController {
 /*======================================================Estilo=======================================================================*/
 
 	
-	@PostMapping(value = "salvarEstilo")
+	@PostMapping()
 	@ResponseBody  
 	public ResponseEntity<Estilo> salvarEstilo(@RequestBody Estilo est) /* Recebe os dados para salvar */ {
 
@@ -40,7 +44,7 @@ public class EstiloController {
 	
 	
 
-	@DeleteMapping(value = "deleteEstilo")
+	@DeleteMapping()
 	@ResponseBody  
 	ResponseEntity<String> deleteEstilo(@RequestParam Long id) /* Recebe os dados para salvar */ {
 
@@ -50,7 +54,7 @@ public class EstiloController {
 	}
 	
 	
-	@PutMapping(value = "atualizarEstilo")
+	@PutMapping()
 	@ResponseBody  
 	public ResponseEntity<?> atualizarEstilo(@RequestBody Estilo esti) /* Recebe os dados para salvar */ {
 
@@ -64,7 +68,7 @@ public class EstiloController {
 	}
 	
 	
-	@GetMapping(value = "getEstiloid")
+	@GetMapping(value = "/id")
 	@ResponseBody  
 	public ResponseEntity<Estilo> getEstiloid (@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
@@ -73,19 +77,8 @@ public class EstiloController {
 		return new ResponseEntity<Estilo>(id1, HttpStatus.OK);
 	}
 	
-	
-
-	@GetMapping(value = "getEstilo")
-	@ResponseBody  
-	public ResponseEntity<List<Estilo>> getEstilo (@RequestParam(name = "esti") String estilo) /* Recebe os dados para consultar */ {
-
-		List<Estilo> est1 = estiloRepository.getEstilo(estilo.trim().toUpperCase());
-
-		return new ResponseEntity<List<Estilo>>(est1, HttpStatus.OK);
-	}
-	
-	
-	@GetMapping(value = "getEveryEstilo")
+		
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<Estilo>> getEveryEstilo() {
 
@@ -94,8 +87,6 @@ public class EstiloController {
 		return new ResponseEntity<List<Estilo>>(est1, HttpStatus.OK);
 
 	}
-
-	
 	
 	
 }

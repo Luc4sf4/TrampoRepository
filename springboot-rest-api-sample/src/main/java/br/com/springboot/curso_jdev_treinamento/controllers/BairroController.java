@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Bairro;
 import br.com.springboot.curso_jdev_treinamento.repository.BairroRepository;
 
+
+@RequestMapping ("bairro")
 @RestController
 public class BairroController {
 
@@ -26,7 +29,7 @@ public class BairroController {
 	
 	
 	
-	@PostMapping(value = "salvarBairro")
+	@PostMapping()
 	@ResponseBody
 	public ResponseEntity<Bairro> salvarBairro(@RequestBody Bairro bairro) {
 
@@ -38,7 +41,7 @@ public class BairroController {
 	
 	
 	
-	@DeleteMapping(value = "deleteBairro")
+	@DeleteMapping()
 	@ResponseBody
 	ResponseEntity<String> deleteBairro(@RequestParam Long id) /* Recebe os dados para salvar */ {
 
@@ -49,7 +52,7 @@ public class BairroController {
 
 	
 	
-	@PutMapping(value = "atualizarBairro")
+	@PutMapping()
 	@ResponseBody
 	public ResponseEntity<?> atualizarBairro(@RequestBody Bairro esti) /* Recebe os dados para salvar */ {
 
@@ -65,7 +68,7 @@ public class BairroController {
 	
 	
 	
-	@GetMapping(value = "getBairroid")
+	@GetMapping("/id")
 	@ResponseBody
 	public ResponseEntity<Bairro> getBairroid(@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
@@ -75,22 +78,9 @@ public class BairroController {
 	}
 
 	
+		
 	
-	
-	@GetMapping(value = "getBairro")
-	@ResponseBody
-	public ResponseEntity<List<Bairro>> getBairro(
-			@RequestParam(name = "bairro") String bairro) /* Recebe os dados para consultar */ {
-
-		List<Bairro> est1 = bairroRepository.getBairro(bairro.trim().toUpperCase());
-
-		return new ResponseEntity<List<Bairro>>(est1, HttpStatus.OK);
-	}
-
-	
-	
-	
-	@GetMapping(value = "getEveryBairro")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<Bairro>> getEveryBairro() {
 

@@ -49,7 +49,7 @@ public class AlturaController {
 
 	
 
-	@PutMapping(value = "atualizarAltura")
+	@PutMapping()
 	@ResponseBody
 	public ResponseEntity<?> atualizarAltura (@RequestBody Altura altu) {
 
@@ -64,13 +64,13 @@ public class AlturaController {
 
 	
 
-	@GetMapping(value = "getEveryAltura")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<Altura>> getEveryAltura() {
 
-		List<Altura> est1 = alturaRepository.findAll();
+		List<Altura> altura = alturaRepository.findAll();
 
-		return new ResponseEntity<List<Altura>>(est1, HttpStatus.OK);
+		return new ResponseEntity<List<Altura>>(altura, HttpStatus.OK);
 
 	}
 	

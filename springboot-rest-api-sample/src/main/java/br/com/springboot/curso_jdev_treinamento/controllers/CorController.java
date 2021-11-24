@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,11 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Cor;
 import br.com.springboot.curso_jdev_treinamento.repository.CorRepository;
 
-/**
- *
- * A sample greetings controller to return greeting text
- */
-
+@RequestMapping("cor")
 @RestController
 public class CorController {
 
@@ -31,7 +28,7 @@ public class CorController {
 
 	
 	
-	@PostMapping(value = "salvarCor")
+	@PostMapping()
 	@ResponseBody
 	public ResponseEntity<Cor> salvarCor(@RequestBody Cor cor) /* Recebe os dados para salvar */ {
 
@@ -40,7 +37,7 @@ public class CorController {
 		return new ResponseEntity<Cor>(cor2, HttpStatus.CREATED);
 	}
 
-	@DeleteMapping(value = "deleteCor")
+	@DeleteMapping()
 	@ResponseBody
 	ResponseEntity<String> deleteCor(@RequestParam Long id) /* Recebe os dados para salvar */ {
 
@@ -49,7 +46,7 @@ public class CorController {
 		return new ResponseEntity<String>("User deletado com sucesso ", HttpStatus.OK);
 	}
 
-	@GetMapping(value = "getCorid")
+	@GetMapping(value = "/id")
 	@ResponseBody
 	public ResponseEntity<Cor> getCorid(@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
@@ -58,17 +55,9 @@ public class CorController {
 		return new ResponseEntity<Cor>(id1, HttpStatus.OK);
 	}
 
-	@GetMapping(value = "getCor")
-	@ResponseBody
-	public ResponseEntity<List<Cor>> getCor(
-			@RequestParam(name = "cor") String cor2) /* Recebe os dados para consultar */ {
 
-		List<Cor> cor1 = corRepository.getCor(cor2.trim().toUpperCase());
 
-		return new ResponseEntity<List<Cor>>(cor1, HttpStatus.OK);
-	}
-
-	@GetMapping(value = "getEveryCor")
+	@GetMapping()
 	@ResponseBody
 	public ResponseEntity<List<Cor>> getEveryCor() {
 
@@ -78,7 +67,7 @@ public class CorController {
 
 	}
 
-	@PutMapping(value = "atualizarCor")
+	@PutMapping()
 	@ResponseBody
 	public ResponseEntity<?> atualizarCor(@RequestBody Cor cor) /* Recebe os dados para salvar */ {
 
