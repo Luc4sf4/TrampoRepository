@@ -173,7 +173,7 @@
 
 				$.ajax({
 					method : "POST",
-					url : "salvarCategoria",
+					url : "categoria",
 					data : JSON.stringify({
 
 						id : id,
@@ -199,9 +199,8 @@
 						.ajax(
 								{
 									method : "GET",
-									url : "getCategoria",
-									data : "cat=" + categoria,
-
+									url : "categoria/",
+									
 									success : function(response) {
 
 										$('#tabelaResultados > tbody > tr')
@@ -225,15 +224,15 @@
 										}
 									}
 								}).fail(function(xhr, status, errorThrown) {
-							alert("Erro ao Buscar Usuário" + xhr.reponseText);
+							alert("Erro ao Buscar Usuário " + xhr.reponseText);
 						})
 			}
 
 			function colocarEmEdicao(id) {
 				$.ajax({
 					method : "GET",
-					url : "getcategoriaid",
-					data : "iduser=" + id,
+					url : "categoria/id",
+					data : "id=" + id,
 
 					success : function(response) {
 
@@ -244,6 +243,9 @@
 						$('#categoriaH').val(response.description);
 
 						$('#modalbuscarPorStatus').modal('hide');
+						
+						$('.show').hide();
+
 
 					}
 
@@ -257,7 +259,7 @@
 				if (confirm('Deseja realemente deletar ?')) {
 					$.ajax({
 						method : "DELETE",
-						url : "deleteCategoria",
+						url : "categoria",
 						data : "id=" + id,
 
 						success : function(response) {

@@ -37,7 +37,7 @@
 
 
 			<label for="Nome" class="form-label">Informe a Altura (ex: 184 cm)</label> <input
-				type="text" class="form-control" id="alturaH"
+				type="text" class="form-control" id="alturah"
 				placeholder="Infrome a sua altura " required="required">
 		</div>
 
@@ -121,8 +121,7 @@
 										<thead>
 											<tr>
 												<th scope="col">ID</th>
-												<th scope="col">Parametro 1</th>
-												<th scope="col">Parametro 2</th>
+												<th scope="col">altura</th>
 												<th scope="col">Status</th>
 												<th scope="col">Editar</th>
 												<th scope="col">Deletar</th>
@@ -153,17 +152,17 @@
 
 						var id = $('#id').val();
 
-						var altura = $('#alturaH').val();
+						var altura = $('#alturah').val();
 
 						var status = $('#status').val();
 
 						$.ajax({
 							method : "POST",
-							url : "parametros",
+							url : "altura",
 							data : JSON.stringify({
 
 								id : id,
-								altura : description,
+								description : altura,
 								status : status
 
 							}),
@@ -179,17 +178,15 @@
 						})
 					}
 
-					function getListCategoria() {
+					function getListAltura() {
 
-						var altura = $('#alturaH').val();
+						var altura = $('#alturah').val();
 
 
-						$
-								.ajax(
-										{
-											method : "GET",
-											url : "altura",
-											data : "altura=" + altura,
+						$.ajax({
+							   method : "GET",
+							   url : "altura",
+							
 
 											success : function(response) {
 
@@ -253,7 +250,7 @@
 							$
 									.ajax({
 										method : "DELETE",
-										url  : "parametros",
+										url  : "altura",
 										data : "id=" + id,
 
 										success : function(response) {

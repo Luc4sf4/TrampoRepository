@@ -1,6 +1,8 @@
 package br.com.springboot.curso_jdev_treinamento.controllers;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,72 +14,82 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import br.com.springboot.curso_jdev_treinamento.model.Altura;
 import br.com.springboot.curso_jdev_treinamento.repository.AlturaRepository;
 
-
-
-
-
-@RequestMapping ("altura")
+@RequestMapping("altura")
 @RestController
 public class AlturaController {
 
+	@Autowired
 	private AlturaRepository alturaRepository;
 	
-
-	
-	@PostMapping()
+	@PostMapping
 	@ResponseBody
-	public ResponseEntity<Altura> salvarAltura(@RequestBody Altura alt) {
-
-		Altura altu = alturaRepository.save(alt);
+	public ResponseEntity<Altura> saveAltura (@RequestBody Altura altu) {
 		
-		return new ResponseEntity<Altura>(altu, HttpStatus.CREATED);
+		Altura alt = alturaRepository.save(altu);
+		
+		return new ResponseEntity<Altura>(alt,HttpStatus.CREATED);
+		
+		
 	}
-
 	
-
-	@DeleteMapping()
+	
+	@GetMapping
 	@ResponseBody
-	ResponseEntity<String> deleteAltura(@RequestParam Long id)  {
-
+	public ResponseEntity<List<Altura>> getEveryAltura () {
+		
+		
+		List<Altura> alt = alturaRepository.findAll();
+		
+		return new ResponseEntity<List<Altura>> (alt,HttpStatus.OK);
+		
+	}
+	
+	@GetMapping(value = "/id")
+	@ResponseBody
+	public ResponseEntity<Altura> getAlturaId (@RequestParam(name = "id")Long id){
+		
+		Altura alt = alturaRepository.findById(id).get();
+		
+		return new ResponseEntity<Altura>(alt, HttpStatus.OK);
+		
+		
+	}  
+	
+	
+	
+	@DeleteMapping
+	@ResponseBody
+	public ResponseEntity<String> delteAltura (@RequestParam Long id) {
+		
+		
 		alturaRepository.deleteById(id);
-
-		return new ResponseEntity<String>("User deletado com sucesso ", HttpStatus.OK);
+		
+		return new ResponseEntity<String> ("Cadastro deletado com sucesso", HttpStatus.OK);
+		
+		
 	}
-
 	
-
-	@PutMapping()
+	@PutMapping
 	@ResponseBody
-	public ResponseEntity<?> atualizarAltura (@RequestBody Altura altu) {
-
-		if (altu.getId() == null) {
-			return new ResponseEntity<String>(" Id não foi informado para a atualização ", HttpStatus.OK);
+	public ResponseEntity<?> updateAltura(@RequestBody Altura altu) {
+		
+		if(altu.getId() == null) {
+			
+			return new ResponseEntity<String> (" ID não foi informado para atualização ", HttpStatus.OK);
+			
 		}
-
-		Altura est = alturaRepository.saveAndFlush(altu);
-
-		return new ResponseEntity<Altura>(est, HttpStatus.OK);
-	}
-
-	
-
-	@GetMapping()
-	@ResponseBody
-	public ResponseEntity<List<Altura>> getEveryAltura() {
-
-		List<Altura> altura = alturaRepository.findAll();
-
-		return new ResponseEntity<List<Altura>>(altura, HttpStatus.OK);
-
-	}
-	
-	
-	
-	
-	
+		
+		Altura alt = alturaRepository.saveAndFlush(altu);
+		
+		return new ResponseEntity<Altura>(alt, HttpStatus.OK);
+		
+		
+		
+	} 
 	
 	
 	

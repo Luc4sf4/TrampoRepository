@@ -17,17 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.Categoria;
 import br.com.springboot.curso_jdev_treinamento.repository.CategoriaRepository;
 
-@RequestMapping ("categoria ") 
+@RequestMapping ("categoria") 
 @RestController
 public class CategoriaController {
 
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 
+	
+	
 	@GetMapping(value = "/id")
 	@ResponseBody
 	public ResponseEntity<Categoria> getcategoriaid(
-			@RequestParam(name = "iduser") Long id) /* Recebe os dados para consultar */ {
+			@RequestParam(name = "id") Long id) /* Recebe os dados para consultar */ {
 
 		Categoria id1 = categoriaRepository.findById(id).get();
 

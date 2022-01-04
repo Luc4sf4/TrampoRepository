@@ -59,15 +59,15 @@
 				type="text" class="form-control" id="telefone"
 				placeholder="Infrome o seu telefone" required="required"">
 		</div>
-		
-		
+
+
 		<div class="mb-3">
 			<label for="Nome" class="form-label">Informe o seu CPF</label> <input
 				type="text" class="form-control" id="cpf"
 				placeholder="Infrome o seu cpf" required="required"">
 		</div>
-		
-		
+
+
 
 	</div>
 
@@ -106,13 +106,13 @@
 						<table class="table" id="tabelaResultados">
 							<thead>
 								<tr>
-									<th scope="col">ID      </th>
-									<th scope="col">Nome    </th>
-									<th scope="col">Sexo    </th>
+									<th scope="col">ID</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Sexo</th>
 									<th scope="col">Telefone</th>
-									<th scopr="col">CPF     </th>
-									<th scope="col">Editar  </th>
-									<th scope="col">Deletar </th>
+									<th scopr="col">CPF</th>
+									<th scope="col">Editar</th>
+									<th scope="col">Deletar</th>
 
 								</tr>
 							</thead>
@@ -204,7 +204,7 @@
  					$('#tabelaResultados > tbody > tr').remove();
  					
  					for (var i = 0; i < response.length; i++){
-						$('#tabelaResultados > tbody').append('<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response [i].nome+'</td><td>'+response [i].sexo+'</td><td>'+response[i].telefone +'</td><td>'+response[i].cpf +'</td><button type="button" onclick = "colocarEmEdicao('+response[i].id+')" class="btn btn-primary">Ver</button></td><td><button type="button" class="btn btn-danger" onclick = "deleteUser('+response[i].id+')">Deletar</button></td><td></tr>');   
+						$('#tabelaResultados > tbody').append('<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response [i].nome+'</td><td>'+response [i].sexo+'</td><td>'+response[i].telefone +'</td><td>'+response[i].cpf +'</td> <td><button type="button" onclick = "colocarEmEdicao('+response[i].id+')" class="btn btn-primary">Ver</button></td><td><button type="button" class="btn btn-danger" onclick = "deleteUser('+response[i].id+')">Deletar</button></td><td></tr>');   
 						}
  					
  					}

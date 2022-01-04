@@ -1,6 +1,7 @@
 package br.com.springboot.curso_jdev_treinamento.model;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,17 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-@SequenceGenerator(name = "seq_altura", sequenceName = "seq_altura", allocationSize = 1, initialValue = 1)
-public class Altura implements Serializable {
+@SequenceGenerator (name= "seq_alt", sequenceName = "seq_alt", allocationSize = 1,initialValue = 1)
 
-	private static final long serialVersionUID = 1l;
-
+public class Altura  implements Serializable{
+	
+	private static final long serialVersionUID = 1;
+	
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_altura")
+	@GeneratedValue (strategy =  GenerationType.SEQUENCE, generator = "seq_alt")
 	private Long id;
 
 	private String description;
-
+	
 	private String status;
 
 	public Long getId() {
@@ -44,5 +47,9 @@ public class Altura implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
+	
+	
+	
+	
+	
 }

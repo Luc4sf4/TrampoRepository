@@ -178,7 +178,7 @@
 	 		
 	 			$.ajax({
 	 				method: "POST",
-	 				url: "salvarMarca",
+	 				url: "marca",
 	 				data: JSON.stringify({
 	 					
 	 					id : id, 
@@ -204,8 +204,8 @@
 	 		var marca  = $('#marcaH').val();
 	 			$.ajax({
 	 				method: "GET",
-	 				url: "getMarca",
-	 				data: "marc=" + marca,
+	 				url: "marca",
+	 				
 	 			
 	 				success: function (response) {
 	 					
@@ -224,20 +224,23 @@
 		function colocarEmEdicao(id){
 	 		$.ajax({
 					method: "GET",
-					url: "getMarcaid",
+					url: "marca/id",
 					data: "id=" + id,
 				
-					success: function (response) {
-						
+					success : function(response) {
+
 						$("#id").val(response.id);
-				 		
+
 						$('#status').val(response.status);
-						
+
 						$('#marcaH').val(response.description);
-											
+
 						$('#modalbuscarPorStatus').modal('hide');
+
+						$('.show').hide();
 						
-						}
+					}
+
 						
 				}).fail(function(xhr, status, errorThrown){
 					alert ("Erro ao Buscar Usuário por id: " + xhr.reponseText); 				
@@ -250,7 +253,7 @@
 			 if (confirm('Deseja realemente deletar ?')) {
 			 $.ajax({
 					method: "DELETE",
-					url: "deleteMarca",
+					url: "marca",
 					data: "id=" + id,
 				
 					success: function (response) {

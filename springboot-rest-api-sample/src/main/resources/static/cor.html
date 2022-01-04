@@ -180,7 +180,7 @@
 	 		
 	 			$.ajax({
 	 				method: "POST",
-	 				url: "salvarCor",
+	 				url: "cor",
 	 				data: JSON.stringify({
 	 					
 	 					id : id, 
@@ -206,8 +206,7 @@
 	 		var cor  = $('#corH').val();
 	 			$.ajax({
 	 				method: "GET",
-	 				url: "getCor",
-	 				data: "cor=" + cor,
+	 				url: "cor",
 	 			
 	 				success: function (response) {
 	 					
@@ -227,7 +226,7 @@
 	 function colocarEmEdicao(id){
 	 		$.ajax({
 					method: "GET",
-					url: "getCorid",
+					url: "cor/id",
 					data: "id=" + id,
 				
 					success: function (response) {
@@ -239,6 +238,8 @@
 						$('#corH').val(response.description);
 											
 						$('#modalbuscarPorStatus').modal('hide');
+						
+						$('.show').hide();
 						
 						}
 						
@@ -252,7 +253,7 @@
 			 if (confirm('Deseja realemente deletar ?')) {
 			 $.ajax({
 					method: "DELETE",
-					url: "deleteCor",
+					url: "cor",
 					data: "id=" + id,
 				
 					success: function (response) {

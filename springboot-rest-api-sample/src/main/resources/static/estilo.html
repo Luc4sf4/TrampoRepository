@@ -171,7 +171,7 @@
 	 		
 	 			$.ajax({
 	 				method: "POST",
-	 				url: "salvarEstilo",
+	 				url: "estilo",
 	 				data: JSON.stringify({
 	 					
 	 					id : id, 
@@ -195,8 +195,7 @@
 	 		var estilo  = $('#estiloH').val();
 	 			$.ajax({
 	 				method: "GET",
-	 				url: "getEstilo",
-	 				data: "esti=" + estilo,
+	 				url: "estilo",
 	 			
 	 				success: function (response) {
 	 					
@@ -216,7 +215,7 @@
 	 function colocarEmEdicao(id){
 	 		$.ajax({
 					method: "GET",
-					url: "getEstiloid",
+					url: "estilo/id",
 					data: "id=" + id,
 				
 					success: function (response) {
@@ -229,6 +228,7 @@
 											
 						$('#modalbuscarPorStatus').modal('hide');
 						
+						$('.show').hide();
 						}
 						
 				}).fail(function(xhr, status, errorThrown){
@@ -242,7 +242,7 @@
 			 if (confirm('Deseja realemente deletar ?')) {
 			 $.ajax({
 					method: "DELETE",
-					url: "deleteEstilo",
+					url: "estilo",
 					data: "id=" + id,
 				
 					success: function (response) {

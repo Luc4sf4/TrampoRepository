@@ -84,9 +84,9 @@ public class BairroController {
 	@ResponseBody
 	public ResponseEntity<List<Bairro>> getEveryBairro() {
 
-		List<Bairro> est1 = bairroRepository.findAll();/* executa a consulta do banco de dados */
+		List<Bairro> bairro = bairroRepository.findAll();/* executa a consulta do banco de dados */
 
-		return new ResponseEntity<List<Bairro>>(est1, HttpStatus.OK);
+		return new ResponseEntity<List<Bairro>>(bairro, HttpStatus.OK);
 
 	}
 

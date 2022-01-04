@@ -159,7 +159,7 @@
 	
 			$.ajax({
 				method : "POST",
-				url : "salvarEnvio",
+				url : "envio",
 				data : JSON.stringify({
 
 					id : id,
@@ -185,7 +185,7 @@
 					.ajax(
 							{
 								method : "GET",
-								url : "getListEnvio",
+								url : "envio",
 								data : "envio" + envio,
 
 								success : function(response) {
@@ -218,7 +218,7 @@
 		function colocarEmEdicao(id) {
 			$.ajax({
 				method : "GET",
-				url : "getListEnvio",
+				url : "envio/id",
 				data : "id=" + id,
 
 				success : function(response) {
@@ -230,6 +230,8 @@
 					$('#envioH').val(response.description);
 
 					$('#modalbuscarPorStatus').modal('hide');
+					
+					$('.show').hide();
 
 				}
 
@@ -243,7 +245,7 @@
 			if (confirm('Deseja realemente deletar ?')) {
 				$.ajax({
 					method : "DELETE",
-					url : "deleteEnvio",
+					url : "envio",
 					data : "id=" + id,
 
 					success : function(response) {
@@ -264,6 +266,14 @@
 			}
 
 		}
+		
+		
+		
+		
+		
+		
+		
+		
 
 		jQuery(document).ready(function() {
 

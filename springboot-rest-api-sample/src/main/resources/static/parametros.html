@@ -59,7 +59,7 @@
 
 
 	<button type="button" class="btn btn-primary"
-		onclick="salvarParametro()">Salvar</button>
+			onclick="salvarParametro()">Salvar</button>
 
 
 	<button type="button" class="btn btn-secondary"
@@ -189,8 +189,7 @@
 
 						var parametro2 = $('#parametro2H').val();
 
-						$
-								.ajax(
+						$.ajax(
 										{
 											method : "GET",
 											url : "parametros",
@@ -258,8 +257,7 @@
 
 					function deleteUser(id) {
 						if (confirm('Deseja realemente deletar ?')) {
-							$
-									.ajax({
+							$.ajax({
 										method : "DELETE",
 										url : "parametros",
 										data : "id=" + id,
