@@ -1,0 +1,62 @@
+[33mcommit 0f549f2a6c6d78d3fd76853996121eccf778560a[m[33m ([m[1;36mHEAD -> [m[1;32mLucas[m[33m)[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Wed Nov 24 10:31:28 2021 -0300
+
+    comitando altura.html
+
+[33mcommit b8775a72300240585957e7c997c49f6d70a2f3e0[m[33m ([m[1;31morigin/Lucas[m[33m)[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Fri Nov 19 15:30:53 2021 -0300
+
+    juro que é o meu ultimo commit
+
+[33mcommit fcd58db89b6e8084333990b8c32191269e42f507[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Fri Nov 19 15:16:04 2021 -0300
+
+    commit pra manter a salvo algumas coisas
+
+[33mcommit c658b0df3c89068393bc24aa9a83f0f9e6be2afc[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Fri Nov 19 14:58:49 2021 -0300
+
+    commit para começar a arrumar o arquivo "altura"
+
+[33mcommit def67002072a9ae61f154355f3a0af1a1e374ade[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Fri Nov 19 14:45:29 2021 -0300
+
+    commit e iniciando identação rest style
+
+[33mcommit 1d3b2a7a9ade75fc1bec00183c231794578f8c6f[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Wed Nov 17 15:56:35 2021 -0300
+
+    mudando de branch, a branch Lucas será usada :)
+
+[33mcommit 062e4c9a45c717f4ac62295ba0af8d9990055c33[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Tue Nov 16 16:02:59 2021 -0300
+
+    Revert "Terminado o CRUD de Parametros e returnando com o TipoEnvio (terminar o"
+    
+    This reverts commit 54adbcb11d098b97afe75bf275581c32d4a560ff.
+
+[33mcommit 5c210e05f5b99c03234ab815175f368e1a35261f[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Tue Nov 16 15:57:20 2021 -0300
+
+    Dando um commit pra testar nova Branch
+
+[33mcommit 54adbcb11d098b97afe75bf275581c32d4a560ff[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Tue Nov 16 15:48:00 2021 -0300
+
+    Terminado o CRUD de Parametros e returnando com o TipoEnvio (terminar o
+    Front)
+
+[33mcommit bb13ab16e738f2dfc2a684e7d2ef828f85d14bb9[m
+Author: Lucas Fernandes Dias <superlucas2005@gmail.com>
+Date:   Tue Oct 19 15:10:24 2021 -0300
+
+    primeiro commit curd
