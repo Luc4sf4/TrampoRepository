@@ -36,13 +36,18 @@
 		<div class="mb-3">
 
 
-			<label for="Nome" class="form-label">Parametro 1</label> <input
-				type="text" class="form-control" id="parametro1H"
+			<label for="Nome" class="form-label">Site Title</label> <input
+				type="text" class="form-control" id="siteTitle"
 				placeholder="Infrome o primeiro Parametro" required="required">
 
-			<label for="Nome" class="form-label">Parametro 2</label> <input
-				type="text" class="form-control" id="parametro2H"
-				placeholder="Infrome o segundo Parametro" required="required">
+			<label for="Nome" class="form-label">Sub Title</label> <input
+				type="text" class="form-control" id="subTitle"
+				placeholder="Infrome o subtitulo" required="required">
+				
+				
+			<label for="Nome" class="form-label">Text 1</label> <input
+				type="text" class="form-control" id="Txt"
+				placeholder="Infrome o texto do chapéu " required="required">
 		</div>
 
 		<div class="mb-3">
@@ -116,7 +121,7 @@
 
 									<div class="mb-3"></div>
 									<button type="button" class="btn btn-success"
-										onclick="getListCategoria()">Buscar</button>
+										onclick="getListParameter()">Buscar</button>
 
 								</form>
 
@@ -124,12 +129,13 @@
 									<table class="table" id="tabelaResultados">
 										<thead>
 											<tr>
-												<th scope="col">ID</th>
-												<th scope="col">Parametro 1</th>
-												<th scope="col">Parametro 2</th>
-												<th scope="col">Status</th>
-												<th scope="col">Editar</th>
-												<th scope="col">Deletar</th>
+												<th scope="col">ID		  </th>
+												<th scope="col">Títutlo   </th>
+												<th scope="col">sub-Título</th>
+												<th scope= "col">Text 1	  </th>
+												<th scope="col">Status    </th>
+												<th scope="col">Editar    </th>
+												<th scope="col">Deletar   </th>
 
 											</tr>
 										</thead>
@@ -157,19 +163,22 @@
 
 						var id = $('#id').val();
 
-						var parametro1 = $('#parametro1H').val();
+						var siteTitle   = $('#siteTitle').val();
 
-						var parametro2 = $('#parametro2H').val();
+						var subTitle    = $('#subTitle').val();
 
+						var text 		=$('#Txt').val()      ; 
+						
 						$.ajax({
 							method : "POST",
 							url : "parametros",
 							data : JSON.stringify({
 
 								id : id,
-								parametro1 : parametro1,
-								parametro2 : parametro2
-
+							    sitetitle : siteTitle,
+								subtitle1 : subTitle,
+								txt1	  : text		
+								
 							}),
 							contentType : "application/json; charset= utf-8",
 							success : function(response) {
@@ -183,18 +192,21 @@
 						})
 					}
 
-					function getListCategoria() {
+					function getListParameter() {
 
-						var parametro1 = $('#parametro1H').val();
+						var siteTitle = $('#siteTitle').val();
 
-						var parametro2 = $('#parametro2H').val();
+						var subTitle  = $('#subTitle').val() ;
+						
+						var text      = $('#Txt').val()      ;	
 
 						$.ajax(
 										{
 											method : "GET",
-											url : "parametros",
-											data : "param1=" + parametro1,
-											data : "param2=" + parametro2,
+											url  : "parametros/",
+											data : "siteTitle=" + siteTitle,
+											data : "subTitle="  + subTitle,
+											data : "text="      +text,
 
 											success : function(response) {
 
@@ -210,8 +222,8 @@
 																	'<tr id="'+response[i].id+'"><td>'
 																			+ response[i].id
 																			+ '</td><td>'
-																			+ response[i].parametro1	+ '</td><td>'+ response[i].parametro2
-																			+ '</td><td>'
+																			+ response[i].sitetitle	+ '</td><td>'+ response[i].subtitle1
+																			+'</td><td>'+ response[i].txt1 + '</td><td>'
 																			+ response[i].status
 																			+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
 																			+ response[i].id
@@ -239,9 +251,9 @@
 
 								$('#status').val(response.status);
 
-								$('#parametro1H').val(response.parametro1);
+								$('#siteTitle').val(response.sitetitle);
 
-								$('#parametro2H').val(response.parametro2);
+								$('#subTitle').val(response.subtitle1);
 
 								$('#modalbuscarPorStatus').modal('hide');
 

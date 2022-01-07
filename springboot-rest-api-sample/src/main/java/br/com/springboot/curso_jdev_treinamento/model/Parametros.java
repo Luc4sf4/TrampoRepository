@@ -8,26 +8,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-
-
 @Entity
-@SequenceGenerator(name = "seq_param", sequenceName = "seq_param", allocationSize = 1 ,initialValue = 1 )
+@SequenceGenerator (name= "seq_paramet", sequenceName = "seq_paramet", allocationSize = 1,initialValue = 1)
 public class Parametros implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1;
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.SEQUENCE ,generator = "seq_param") 
+	@GeneratedValue (strategy =  GenerationType.SEQUENCE, generator = "seq_paramet")
 	private Long id;
+
+	private String sitetitle;
 	
-	private String parametro1;
-	
-	private String parametro2;
+	private String subtitle1;
 	
 	private String status;
-	
 
+	private String txt1;
 	
+	public String getTxt1() {
+		return txt1;
+	}
+
+	public void setTxt1(String txt1) {
+		this.txt1 = txt1;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -36,22 +42,22 @@ public class Parametros implements Serializable {
 		this.id = id;
 	}
 
-	public String getParametro1() {
-		return parametro1;
+	public String getSitetitle() {
+		return sitetitle;
 	}
 
-	public void setParametro1(String parametro1) {
-		this.parametro1 = parametro1;
+	public void setSitetitle(String sitetitle) {
+		this.sitetitle = sitetitle;
 	}
 
-	public String getParametro2() {
-		return parametro2;
+
+	public String getSubtitle1() {
+		return subtitle1;
 	}
 
-	public void setParametro2(String parametro2) {
-		this.parametro2 = parametro2;
+	public void setSubtitle1(String subtitle1) {
+		this.subtitle1 = subtitle1;
 	}
-
 
 	public String getStatus() {
 		return status;
@@ -60,7 +66,8 @@ public class Parametros implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
+	
+	
 	
 	
 }

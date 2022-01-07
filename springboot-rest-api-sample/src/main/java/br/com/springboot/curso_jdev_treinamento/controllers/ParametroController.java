@@ -29,9 +29,9 @@ public class ParametroController {
 	@ResponseBody
 	public ResponseEntity<Parametros> salvarParametro(@RequestBody Parametros param) {
 
-		Parametros param1 = paramRepository.save(param);
+		Parametros sitetile = paramRepository.save(param);
 
-		return new ResponseEntity<Parametros>(param1, HttpStatus.CREATED);
+		return new ResponseEntity<Parametros>(sitetile, HttpStatus.CREATED);
 
 	}
 
@@ -39,9 +39,9 @@ public class ParametroController {
 	@ResponseBody
 	public ResponseEntity<List<Parametros>> getEveryParametro() {
 
-		List<Parametros> param1 = paramRepository.findAll();
+		List<Parametros> sitetitle = paramRepository.findAll();
 
-		return new ResponseEntity<List<Parametros>>(param1, HttpStatus.OK);
+		return new ResponseEntity<List<Parametros>>(sitetitle, HttpStatus.OK);
 
 	}
 
@@ -73,8 +73,8 @@ public class ParametroController {
 			return new ResponseEntity<String>("Id não foi informado para atualização ", HttpStatus.OK);
 		}
 
-		Parametros param1 = paramRepository.saveAndFlush(param);
-		return new ResponseEntity<Parametros>(param1, HttpStatus.OK);
+		Parametros siteTitle = paramRepository.saveAndFlush(param);
+		return new ResponseEntity<Parametros>(siteTitle, HttpStatus.OK);
 
 	}
 

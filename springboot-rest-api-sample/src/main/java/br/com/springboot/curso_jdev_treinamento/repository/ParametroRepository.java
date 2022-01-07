@@ -12,8 +12,8 @@ import br.com.springboot.curso_jdev_treinamento.model.Parametros;
 public interface ParametroRepository extends JpaRepository<Parametros, Long> {
 
 	
-	@Query (value = "select u from Parametros u where upper(trim(u.parametro1)) like %?1%")
-	List<Parametros>getParametro(String parametro1);
+	@Query (value = "select u from Parametros u where upper(trim(u.sitetitle)) like %?1%")
+	List<Parametros>getEveryParametro(String sitetitle);
 	
 	
 }
