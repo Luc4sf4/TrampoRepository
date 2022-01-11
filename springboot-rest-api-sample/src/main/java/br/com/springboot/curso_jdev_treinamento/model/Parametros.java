@@ -30,6 +30,7 @@ public class Parametros implements Serializable {
 	
 	private String title_video;
 	
+
 	private String parametro567;
 	
 	private String parametro786;
@@ -49,6 +50,90 @@ public class Parametros implements Serializable {
 	private String parametro152;
 	
 	private String parametro145;
+	
+	
+	
+	
+	public String getParametro567() {
+		return parametro567;
+	}
+
+	public void setParametro567(String parametro567) {
+		this.parametro567 = parametro567;
+	}
+
+	public String getParametro786() {
+		return parametro786;
+	}
+
+	public void setParametro786(String parametro786) {
+		this.parametro786 = parametro786;
+	}
+
+	public String getParametro547() {
+		return parametro547;
+	}
+
+	public void setParametro547(String parametro547) {
+		this.parametro547 = parametro547;
+	}
+
+	public String getParametro789() {
+		return parametro789;
+	}
+
+	public void setParametro789(String parametro789) {
+		this.parametro789 = parametro789;
+	}
+
+	public String getParametro190() {
+		return parametro190;
+	}
+
+	public void setParametro190(String parametro190) {
+		this.parametro190 = parametro190;
+	}
+
+	public String getParametro988() {
+		return parametro988;
+	}
+
+	public void setParametro988(String parametro988) {
+		this.parametro988 = parametro988;
+	}
+
+	public String getParametro765() {
+		return parametro765;
+	}
+
+	public void setParametro765(String parametro765) {
+		this.parametro765 = parametro765;
+	}
+
+	public String getParametro899() {
+		return parametro899;
+	}
+
+	public void setParametro899(String parametro899) {
+		this.parametro899 = parametro899;
+	}
+
+	public String getParametro152() {
+		return parametro152;
+	}
+
+	public void setParametro152(String parametro152) {
+		this.parametro152 = parametro152;
+	}
+
+	public String getParametro145() {
+		return parametro145;
+	}
+
+	public void setParametro145(String parametro145) {
+		this.parametro145 = parametro145;
+	}
+
 	
 	
 	public String getTitle_video() {
