@@ -26,6 +26,30 @@ public class Parametros implements Serializable {
 
 	private String txt1;
 	
+	private String title_album;
+	
+	private String title_video;
+	
+	
+	
+	
+	
+	public String getTitle_video() {
+		return title_video;
+	}
+
+	public void setTitle_video(String title_video) {
+		this.title_video = title_video;
+	}
+
+	public String getTitle_album() {
+		return title_album;
+	}
+
+	public void setTitle_album(String title_album) {
+		this.title_album = title_album;
+	}
+
 	public String getTxt1() {
 		return txt1;
 	}

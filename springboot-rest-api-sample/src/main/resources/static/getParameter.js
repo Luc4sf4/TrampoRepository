@@ -9,6 +9,8 @@
 					$('#siteTitle').text(response.sitetitle);
 					$('#subTitle').text(response.subtitle1);
 					$('#Txt').text(response.txt1);
+					$('#album_title').text(response.title_album);
+					$('#video_title').text(response.title_video);
 					
 				}
 

@@ -48,6 +48,17 @@
 			<label for="Nome" class="form-label">Text 1</label> <input
 				type="text" class="form-control" id="Txt"
 				placeholder="Infrome o texto do chapéu " required="required">
+				
+				<label for="Nome" class="form-label">Título do Albúm</label> <input
+				type="text" class="form-control" id="album_title"
+				placeholder="Infrome título do album " required="required">
+				
+					<label for="Nome" class="form-label">Título do Vídeo</label> <input
+				type="text" class="form-control" id="video_title"
+				placeholder="Infrome título do album " required="required">
+				
+				
+				
 		</div>
 
 		<div class="mb-3">
@@ -129,13 +140,14 @@
 									<table class="table" id="tabelaResultados">
 										<thead>
 											<tr>
-												<th scope="col">ID		  </th>
-												<th scope="col">Títutlo   </th>
-												<th scope="col">sub-Título</th>
-												<th scope= "col">Text 1	  </th>
-												<th scope="col">Status    </th>
-												<th scope="col">Editar    </th>
-												<th scope="col">Deletar   </th>
+												<th scope="col">ID		    </th>
+												<th scope="col">Títutlo     </th>
+												<th scope="col">sub-Título  </th>
+												<th scope= "col">Text 1	    </th>
+												<th scope= "col">Title album</th>
+												<th scope="col">Status      </th>
+												<th scope="col">Editar      </th>
+												<th scope="col">Deletar     </th>
 
 											</tr>
 										</thead>
@@ -162,12 +174,11 @@
 					function salvarParametro() {
 
 						var id = $('#id').val();
-
-						var siteTitle   = $('#siteTitle').val();
-
-						var subTitle    = $('#subTitle').val();
-
-						var text 		=$('#Txt').val()      ; 
+						var siteTitle   = $('#siteTitle').val() ;
+						var subTitle    = $('#subTitle').val()  ;
+						var text 		=$('#Txt').val()        ; 
+						var albumtitle  =$('#album_title').val();
+						var videotitle  =$('#video_title').val();				
 						
 						$.ajax({
 							method : "POST",
@@ -175,9 +186,12 @@
 							data : JSON.stringify({
 
 								id : id,
-							    sitetitle : siteTitle,
-								subtitle1 : subTitle,
-								txt1	  : text		
+							    sitetitle  : siteTitle,
+								subtitle1  : subTitle,
+								txt1	   : text,		
+								title_album: albumtitle,
+								title_video: videotitle
+								
 								
 							}),
 							contentType : "application/json; charset= utf-8",
@@ -194,19 +208,22 @@
 
 					function getListParameter() {
 
-						var siteTitle = $('#siteTitle').val();
-
-						var subTitle  = $('#subTitle').val() ;
+						var siteTitle  = $('#siteTitle').val()  ;
+						var subTitle   = $('#subTitle').val()   ;
+						var text       = $('#Txt').val()        ;	
+						var albumtitle = $('#album_title').val();
+						var videotitle = $('#video_title').val();
 						
-						var text      = $('#Txt').val()      ;	
 
 						$.ajax(
 										{
 											method : "GET",
 											url  : "parametros/",
-											data : "siteTitle=" + siteTitle,
-											data : "subTitle="  + subTitle,
-											data : "text="      +text,
+											data : "siteTitle="  + siteTitle,
+											data : "subTitle="   + subTitle,
+											data : "text="       + text,
+											data : "albumtitle=" + albumtitle,
+											data : "videotitle=" + videotitle,
 
 											success : function(response) {
 
@@ -223,7 +240,9 @@
 																			+ response[i].id
 																			+ '</td><td>'
 																			+ response[i].sitetitle	+ '</td><td>'+ response[i].subtitle1
-																			+'</td><td>'+ response[i].txt1 + '</td><td>'
+																			+'</td><td>'+ response[i].txt1 + '</td><td>' 
+																			+'</td><td>'+response[i].title_album + '</td><td>'
+																			+'</td><td>'+response[i].title_video + '</td><td>'
 																			+ response[i].status
 																			+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
 																			+ response[i].id
@@ -247,13 +266,19 @@
 
 							success : function(response) {
 
-								$("#id").val(response.id);
+								$("#id").val(response.id)                  ;
 
-								$('#status').val(response.status);
+								$('#status').val(response.status)      	   ;
 
-								$('#siteTitle').val(response.sitetitle);
+								$('#siteTitle').val(response.sitetitle)    ;
+								
+								$('#Txt').val(response.txt1)               ;
 
-								$('#subTitle').val(response.subtitle1);
+								$('#subTitle').val(response.subtitle1)     ;
+								
+								$('#album_title').val(response.title_album);
+								
+								$('#video_title').val(response.title_video);		
 
 								$('#modalbuscarPorStatus').modal('hide');
 
