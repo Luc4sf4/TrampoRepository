@@ -30,8 +30,25 @@ public class Parametros implements Serializable {
 	
 	private String title_video;
 	
+	private String parametro567;
 	
+	private String parametro786;
 	
+	private String parametro547;
+	
+	private String parametro789;
+	
+	private String parametro190;
+	
+	private String parametro988;
+	
+	private String parametro765;
+	
+	private String parametro899;
+	
+	private String parametro152;
+	
+	private String parametro145;
 	
 	
 	public String getTitle_video() {
