@@ -41,7 +41,7 @@
 				placeholder="Infrome o primeiro Parametro" required="required">
 
 			<label for="Nome" class="form-label">parmetro 152</label> <input
-				type="text" class="form-control" id="parametro_153"
+				type="text" class="form-control" id="parametro_152"
 				placeholder="Infrome o subtitulo" required="required">
 				
 				
@@ -199,7 +199,7 @@
 
 						var id = $('#id').val();
 						var parametro145 = $('#parametro_145').val();
-						var parametro153 = $('#parametro_153').val();
+						var parametro152 = $('#parametro_152').val();
 						var parametro190 = $('#parametro_190').val(); 
 						var parametro547 = $('#parametro_547').val();
 						var parametro567 = $('#parametro_567').val();				
@@ -218,7 +218,7 @@
 								
 								id : id,
 							    parametro145 : parametro145,
-								parametro153 : parametro153,
+								parametro152 : parametro152,
 								parametro190 : parametro190,		
 								parametro547 : parametro547,
 								parametro567 : parametro567,
@@ -244,7 +244,7 @@
 					function getListParameter() {
 						
 						var parametro145 = $('#parametro_145').val();
-						var parametro153 = $('#parametro_153').val();
+						var parametro152 = $('#parametro_152').val();
 						var parametro190 = $('#parametro_190').val(); 
 						var parametro547 = $('#parametro_547').val();
 						var parametro567 = $('#parametro_567').val();				
@@ -260,7 +260,7 @@
 											method : "GET",
 /* não me pergunte como, só funciona*/	    url  : "parametros/",
 											data : "parametro145=" + parametro145  ,
-											data : "parametro153=" + parametro153,
+											data : "parametro152=" + parametro152,
 											data : "parametro190=" + parametro190,
 											data : "parametro547=" + parametro547,
 											data : "parametro567=" + parametro567,
@@ -286,12 +286,12 @@
 																	'<tr id="'+response[i].id+'"><td>'
 																			+ response[i].id
 																			+ '</td><td>'
-																			+             response[i].parametro145	+ '</td><td>'+ response[i].parametro153
+																			+             response[i].parametro145	+ '</td><td>'+ response[i].parametro152
 																			+'</td><td>'+ response[i].parametro190  + '</td><td>'+ response[i].parametro547 
-																			+'</td><td>'+ response[i].parametro567  + '</td><td>'+ reposnse[i].parametro765
+																			+'</td><td>'+ response[i].parametro567  + '</td><td>'+ response[i].parametro765
 																			+'</td><td>'+ response[i].parametro786  + '</td><td>'+ response[i].parametro789
 																			+'</td><td>'+ response[i].parametro899  + '</td><td>'+ response[i].parametro988
-																			+ response[i].status
+																			+'</td><td>'+response[i].status
 																			+ '</td> <td><button type="button" onclick = "colocarEmEdicao('
 																			+ response[i].id
 																			+ ')" class="btn btn-primary">Ver</button></td><td><button type="button" class="btn btn-danger" onclick = "deleteUser('
@@ -320,7 +320,7 @@
 
 								$('#parametro_145').val(response.parametro145);
 
-								$('#parametro_153').val(response.parametro153);
+								$('#parametro_152').val(response.parametro152);
 
 								$('#parametro_190').val(response.parametro190);
 								
