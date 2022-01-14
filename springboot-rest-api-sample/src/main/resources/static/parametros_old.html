@@ -226,7 +226,14 @@
 						var videotitle  =$('#video_title').val()    ;
 						var parametro145 = $('#parametro_145').val();
 						var parametro152 = $('#parametro_152').val();
-						
+						var parametro190 = $('#parametro_190').val(); 
+						var parametro547 = $('#parametro_547').val();
+						var parametro567 = $('#parametro_567').val();				
+						var parametro765 = $('#parametro_765').val();
+						var parametro786 = $('#parametro_786').val();
+						var parametro789 = $('#parametro_789').val();
+						var parametro899 = $('#parametro_899').val();
+						var parametro988 = $('#parametro_988').val();
 						
 						$.ajax({
 							method : "POST",
@@ -236,13 +243,13 @@
 								
 								//do banco : do front-end
 								id : id,
-							    sitetitle   : siteTitle,
-								subtitle1   : subTitle,
-								txt1	    : text,		
-								title_album : albumtitle,
-								title_video : videotitle, 
-								parametro145: parametro145,
-								parametro152: parametro152,
+							    sitetitle   : siteTitle    ,
+								subtitle1   : subTitle     ,
+								txt1	    : text         ,		
+								title_album : albumtitle   ,
+								title_video : videotitle   , 
+								parametro145: parametro145 ,
+								parametro152: parametro152 ,
 								parametro190 : parametro190,		
 								parametro547 : parametro547,
 								parametro567 : parametro567,
@@ -269,18 +276,18 @@
 
 					function getListParameter() {
 
-						var siteTitle  = $('#siteTitle').val()      ;
-						var subTitle   = $('#subTitle').val()       ;
-						var text       = $('#Txt').val()            ;	
-						var albumtitle = $('#album_title').val()    ;
-						var videotitle = $('#video_title').val()    ;
+						var siteTitle  =   $('#siteTitle').val()    ;
+						var subTitle   =   $('#subTitle').val()     ;
+						var text       =   $('#Txt').val()          ;	
+						var albumtitle =   $('#album_title').val()  ;
+						var videotitle =   $('#video_title').val()  ;
 						var parametro145 = $('#parametro_145').val();
 						var parametro152 = $('#parametro_152').val();		
 						var parametro190 = $('#parametro_190').val(); 
 						var parametro547 = $('#parametro_547').val();
 						var parametro567 = $('#parametro_567').val();				
 						var parametro765 = $('#parametro_765').val();
-						var parametro786 = $('#parametro_785').val();
+						var parametro786 = $('#parametro_786').val();
 						var parametro789 = $('#parametro_789').val();
 						var parametro899 = $('#parametro_899').val();
 						var parametro988 = $('#parametro_988').val();
@@ -288,11 +295,11 @@
 								
 											method : "GET",
 	/*não me pergunte como, só funciona*/   url  : "parametros/",
-											data : "siteTitle="  + siteTitle,
-											data : "subTitle="   + subTitle,
-											data : "text="       + text,
-											data : "albumtitle=" + albumtitle,
-											data : "videotitle=" + videotitle,
+											data : "siteTitle="  + siteTitle	 ,
+											data : "subTitle="   + subTitle		 ,
+											data : "text="       + text			 ,
+											data : "albumtitle=" + albumtitle    ,
+											data : "videotitle=" + videotitle    ,
 											data : "parametro145=" + parametro145,
 											data : "parametro152=" + parametro152,
 											data : "parametro190=" + parametro190,

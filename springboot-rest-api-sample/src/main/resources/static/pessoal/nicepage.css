@@ -3,6 +3,75 @@
  * License https://froala.com/wysiwyg-editor/terms/
  * Copyright 2014-2021 Froala Labs
  */
+ 
+  .open{
+ 	width: 50px !important;
+ 	font-size: 10px;
+ }
+ 
+html {
+  font-family: "Helvetica Neue", sans-serif;
+  width: 100%;
+  color: yellow;
+  text-align: center;
+}
+
+.popup-overlay {
+  /*Hides pop-up when there is no "active" class*/
+  visibility: hidden;
+  position: absolute;
+  background: #f0e6f1e8;
+  border: 3px solid #666666;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  z-index:3000px;
+  
+}
+
+.popup-overlay.active {
+  /*displays pop-up when "active" class is present*/
+  visibility: visible;
+  text-align: center;
+}
+
+.popup-content {
+  /*Hides pop-up content when there is no "active" class */
+  visibility: hidden;
+}
+
+.popup-content.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility: visible;
+}
+
+button {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 30px;
+  margin: .20rem;
+  font-size: 1rem;
+  color: #666666;
+  background: #ffffff;
+  border: 1px solid #666666;
+}
+
+button:hover {
+  border: 1px solid #666666;
+  background: #666666;
+  color: #ffffff;
+}
+
+
+
+/*
+=++++++++++++++++++++++++++++
+ */
+ 
+ 
+ 
+ 
+ 
 
 .fr-clearfix::after {
   clear: both;
@@ -360,15 +429,7 @@ span.fr-img-caption.fr-view {
       float: right;
       margin: 5px 0 5px 5px;
       max-width: calc(100% - 5px); }
-/*end-commonstyles library*//*begin-commonstyles library*/@charset "UTF-8";
 
-/*!
- * animate.css -https://daneden.github.io/animate.css/
- * Version - 3.7.2
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2019 Daniel Eden
- */
 
 @-webkit-keyframes bounce {
   from,

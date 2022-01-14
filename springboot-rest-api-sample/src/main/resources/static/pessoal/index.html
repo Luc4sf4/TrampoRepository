@@ -16,7 +16,12 @@
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
     
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="jquery.js" defer="">
+    
+    
+    
+    
+    </script>
     
     
     
@@ -54,17 +59,28 @@
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px;">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.html" style="padding: 10px 20px;">Page 1</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Página-Inicial.html" style="padding: 10px 20px;">Página Inicial</a>
-</li></ul>
+</li></ul> 
               </div>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70" wfd-invisible="true"></div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70" wfd-invisible="true"></div>  
           </div>
         </nav>
       </div></header>
     <section class="u-clearfix u-white u-section-2" id="carousel_c53f">
+        <!--Creates the popup body-->
+<div class="popup-overlay">
+  <!--Creates the popup content-->
+  <div class="popup-content">
+    <h2>Pop-Up</h2>
+    <p> This is an example pop-up that you can make using jQuery.</p>
+    <!--popup's close button-->
+    <button class="close">Close</button> </div>
+</div>
+
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-text u-text-default u-text-palette-2-base u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Left" id="siteTitle"  ></h2>
         <p class="u-text u-text-grey-50 u-text-2" id= "subTitle" ></p>
+        <button class="open">Open</button>
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-row">
@@ -110,6 +126,10 @@
       </div>
     </section>
     <section class="u-clearfix u-section-3" src="" id="carousel_9550">
+    
+    
+
+    
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
@@ -139,7 +159,7 @@
     <section class="u-align-right u-clearfix u-image u-section-4" id="carousel_eaa7">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-custom-font u-heading-font u-text u-text-body-alt-color u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Right">Minha Turma</h2>
-        <h3 class="u-text u-text-body-alt-color u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Left" data-animation-delay="250">new tasty</h3>
+        <h3 class="u-text u-text-body-alt-color u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Left" data-animation-delay="250" id= "parametro_190"></h3>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-section-5" id="sec-0733">
@@ -149,7 +169,7 @@
         <div class="u-align-center u-container-style u-group u-palette-2-light-3 u-group-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Right" data-animation-delay="250">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
             <h2 class="u-text u-text-default u-text-palette-2-base u-text-1">Ultima Lembrança</h2>
-            <p class="u-text u-text-2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+           <p class="u-text u-text-2" id = "parametro_547"></p>
             <a href="https://nicepage.site" class="u-border-none u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-text-active-palette-2-light-2 u-text-body-alt-color u-text-hover-palette-2-light-2 u-btn-1">Learn more</a>
             
           </div>
@@ -246,26 +266,20 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-                <p class="u-text u-text-grey-50 u-text-2">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-                <div alt="" class="u-border-7 u-border-palette-2-light-2 u-image u-image-circle u-image-1" data-image-width="206" data-image-height="206" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-direction="" data-animation-delay="500"></div>
-                <h5 class="u-text u-text-default u-text-3">Nat Reynolds</h5>
-                <h6 class="u-text u-text-default u-text-grey-50 u-text-4">Chief Accountant</h6>
+                <p class="u-text u-text-grey-50 u-text-2" id= "parametro_567"></p>
+               <iframe width="231" height="334" id="parametro_765" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-                <p class="u-text u-text-grey-50 u-text-5">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-                <div alt="" class="u-border-7 u-border-palette-2-light-2 u-image u-image-circle u-image-2" data-image-width="206" data-image-height="206" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-direction="" data-animation-delay="500"></div>
-                <h5 class="u-text u-text-default u-text-6">Celia Almeda</h5>
-                <h6 class="u-text u-text-default u-text-grey-50 u-text-7">Secretary</h6>
+                <p class="u-text u-text-grey-50 u-text-5"  id= "parametro_786"></p>
+              	<iframe width="231" height="334" id="parametro_789" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
-            <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-3" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">
+               <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-3" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-                <p class="u-text u-text-grey-50 u-text-8">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-                <div alt="" class="u-border-7 u-border-palette-2-light-2 u-image u-image-circle u-image-3" data-image-width="626" data-image-height="417" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-direction="" data-animation-delay="500"></div>
-                <h5 class="u-text u-text-default u-text-9">Bob Roberts</h5>
-                <h6 class="u-text u-text-default u-text-grey-50 u-text-10">Sales Manager</h6>
+                <p class="u-text u-text-grey-50 u-text-8"  id= "parametro_899"></p>
+               <iframe width="231" height="334" id="parametro_988" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -310,7 +324,14 @@
       </div>
     </section>
     
+    <!-- 
     
+    
+     -->
+     
+
+
+
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7455"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">Site Desenvolvido pelo próprio aluno no curso de WebDesign da escola <b>EDUCALL Ensino infantil.</b></p>
       </div></footer>
