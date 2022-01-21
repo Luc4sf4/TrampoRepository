@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -47,9 +48,34 @@ public class PessoasController {
 	
 	
 	
+	@DeleteMapping()
+	@ResponseBody
+	ResponseEntity<String> deletePessoa(@RequestParam Long idPessoa){
+		
+		pessoaRepository.deleteById(idPessoa);
+		
+		return new ResponseEntity<String>("User deletado com sucesso", HttpStatus.OK);
+		
+	}
 	
 	
 	
+	@PutMapping()
+	@ResponseBody
+	public ResponseEntity<?> updatePessoa(@RequestParam Pessoas pessoa){
+		
+		if(pessoa.getIdPessoa() == null) {
+			
+			
+			return new ResponseEntity<String> ("Id não informado para atualização", HttpStatus.OK);
+			
+		}
+		
+		Pessoas pessoa1 = pessoaRepository.saveAndFlush(pessoa);
+		
+		return new ResponseEntity<Pessoas>(pessoa1, HttpStatus.OK);
+		
+	}
 	
 	
 	
