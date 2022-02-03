@@ -16,63 +16,38 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
-	private Long id;
+	private Long idUsuario;
+
+	private String nivelAcesso;
 	
-	private String nome;
+	private String senha;
 
-	private int sexo;
-
-	private String telefone;
-		
-	private int idade;
-
-	private String cpf;
 	
-	
-	public String getCpf() {
-		return cpf;
+	public Long getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
-	public Long getId() {
-		return id;
+	public String getNivelAcesso() {
+		return nivelAcesso;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setNivelAcesso(String nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	public int getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(int sexo) {
-		this.sexo = sexo;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+	
+	
+	
 }

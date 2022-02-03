@@ -66,7 +66,7 @@ public class UsuarioController {
 	@ResponseBody
 	public ResponseEntity<?> atualizar(@RequestBody Usuario usuario) /* Recebe os dados para salvar */ {
 
-		if (usuario.getId() == null) {
+		if (usuario.getIdUsuario() == null) {
 			return new ResponseEntity<String>(" Id não foi informado para a atualização ", HttpStatus.OK);
 		}
 

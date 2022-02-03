@@ -2,8 +2,6 @@ package br.com.springboot.curso_jdev_treinamento.controllers;
 
 import java.util.List;
 
-import javax.xml.ws.Response;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -91,14 +89,5 @@ public class MatriculaController {
 		return new ResponseEntity<Matricula>(mat, HttpStatus.OK);
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
