@@ -24,6 +24,8 @@ public class Professor implements Serializable{
 	
 	private String contato;
 
+	
+	
 	public Long getIdProf() {
 		return idProf;
 	}

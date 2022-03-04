@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.curso_jdev_treinamento.model.EstadoCivil;
 import br.com.springboot.curso_jdev_treinamento.repository.EstadoCivilRepository;
 
-@RequestMapping("EstadoCivil")
+@RequestMapping("estadoCivil")
 @RestController
 public class EstadoCivilController {
 

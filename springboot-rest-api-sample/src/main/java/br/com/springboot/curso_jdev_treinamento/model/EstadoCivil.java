@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 
 
 @Entity
-@SequenceGenerator(name = "seq_estado", sequenceName = "seq_estado", allocationSize = 1, initialValue = 1)
+@SequenceGenerator(name = "seq_estad", sequenceName = "seq_estad", allocationSize = 1, initialValue = 1)
 public class EstadoCivil implements Serializable {
 
 	
@@ -19,7 +19,7 @@ public class EstadoCivil implements Serializable {
 
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_estado")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_estad")
 	private Long id;
 		
 	private String description;
@@ -27,7 +27,7 @@ public class EstadoCivil implements Serializable {
 	private String status;
 	
 	
-/*===========================================================================================*/
+/*==================================================================================================================================================*/
 	
 	
 	public Long getId() {

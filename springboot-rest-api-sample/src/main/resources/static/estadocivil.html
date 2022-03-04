@@ -185,7 +185,7 @@
 	 		
 	 			$.ajax({
 	 				method: "POST",
-	 				url: "salvarEstado",
+	 				url: "estadoCivil",
 	 				data: JSON.stringify({
 	 					
 	 					id : id, 
@@ -211,9 +211,8 @@
 	 		var estado  = $('#estadoH').val();
 	 			$.ajax({
 	 				method: "GET",
-	 				url: "getEstado",
-	 				data: "estado=" + estado,
-	 			
+	 				url: "estadoCivil",
+ 			
 	 				success: function (response) {
 	 					
 	 					$('#tabelaResultados > tbody > tr').remove();
@@ -232,7 +231,7 @@
 	 function colocarEmEdicao(id){
 	 		$.ajax({
 					method: "GET",
-					url: "getEstadoid",
+					url: "estadoCivil/id",
 					data: "id=" + id,
 				
 					success: function (response) {
@@ -244,6 +243,9 @@
 						$('#estadoH').val(response.description);
 											
 						$('#modalbuscarPorStatus').modal('hide');
+					
+						$('.show').hide();
+
 						
 						}
 						
@@ -258,7 +260,7 @@
 		 if (confirm('Deseja realemente deletar ?')) {
 		 $.ajax({
 				method: "DELETE",
-				url: "deleteEstado",
+				url: "estadoCivil",
 				data: "id=" + id,
 			
 				success: function (response) {
@@ -283,7 +285,7 @@
 		 if (confirm('Deseja realemente deletar ?')) {
 		 $.ajax({
 				method: "DELETE",
-				url: "deleteEstado",
+				url: "estadoCivil",
 				data: "id=" + id,
 			
 				success: function (response) {

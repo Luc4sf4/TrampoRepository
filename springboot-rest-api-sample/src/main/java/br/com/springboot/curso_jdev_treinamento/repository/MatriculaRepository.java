@@ -12,8 +12,8 @@ import br.com.springboot.curso_jdev_treinamento.model.Matricula;
 public interface MatriculaRepository extends JpaRepository<Matricula, Long>{
 	
 	
-	@Query(value ="select u from Matricula u where upper(trim(u.estado)) like %?1%")
-	List<Matricula>getEveryMatricula(String estado);
+	@Query(value ="select u from Matricula u where upper(trim(u.numeroMatricula)) like %?1%")
+	List<Matricula>getEveryMatricula(String numeroMatricula);
 	
 
 }

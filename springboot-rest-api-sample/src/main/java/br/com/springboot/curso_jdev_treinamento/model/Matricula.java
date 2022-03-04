@@ -19,6 +19,8 @@ public class Matricula implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_matri")
 	private Long idMatricula;
 	
+	private String numeroMatricula;
+	
 	private Date data;
 	
 	private Long idAluno;
@@ -26,6 +28,16 @@ public class Matricula implements Serializable{
 	private Long idTurma;
 	
 	private String estado;
+
+	
+	
+	public String getNumeroMatricula() {
+		return numeroMatricula;
+	}
+
+	public void setNumeroMatricula(String numeroMatricula) {
+		this.numeroMatricula = numeroMatricula;
+	}
 
 	public Long getIdMatricula() {
 		return idMatricula;

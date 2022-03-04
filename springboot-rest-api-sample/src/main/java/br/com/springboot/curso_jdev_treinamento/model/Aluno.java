@@ -24,6 +24,16 @@ public class Aluno  implements Serializable{
 	private Date dataNasc;
 	
 	private Long idPessoa;
+	
+	private Long idEstadoCivil;
+
+	public Long getIdEstadoCivil() {
+		return idEstadoCivil;
+	}
+
+	public void setIdEstadoCivil(Long idEstadoCivil) {
+		this.idEstadoCivil = idEstadoCivil;
+	}
 
 	public Long getIdAluno() {
 		return idAluno;
