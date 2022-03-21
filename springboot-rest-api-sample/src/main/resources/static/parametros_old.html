@@ -99,6 +99,10 @@
 					<label for="Nome" class="form-label">parametro 988</label> <input
 				type="text" class="form-control" id="parametro_988"
 				placeholder="Infrome o primeiro Parametro" required="required">
+			
+					<input id="myFileUpload" type="file" />
+					<p id="msg"></p>
+		
 		</div>
 
 		<div class="mb-3">
@@ -436,7 +440,8 @@
 					}
 
 					jQuery(document).ready(function() {
-
+						
+						
 						jQuery('.toggle-nav').click(function(e) {
 							jQuery(this).toggleClass('active');
 							jQuery('.menu ul').toggleClass('active');
@@ -445,7 +450,12 @@
 
 						$("#divHeader").load("header.html");
 						colocarEmEdicao(3);
-					});
+						
+					})
+				
+				
+				
+			
 				</script>
 </body>
 </html>

@@ -9,8 +9,8 @@
 }
 
 .u-section-1 .u-image-1 {
-  width: 569px;
-  height: 569px;
+  width: 560px;
+  height: 560px;
   background-image: url("images/pexels-photo-9889512.jpeg");
   background-position: 50% 50%;
   margin: -832px 0 0 auto;
@@ -200,7 +200,7 @@
 
 .u-section-2 .u-image-1 {
   min-height: 382px;
-  background-image: url("images/ice-cream_144627-17278.jpg");
+  background-image: url("images/photo-3.jpg");
   background-position: 50% 50%;
 }
 
@@ -644,7 +644,7 @@
     min-height: 363px;
   }
 } .u-section-4 {
-  background-image: url("images/pexelsphoto3339495.jpeg");
+  background-image: url("images/pexelsphoto3339495.jpg");
   background-position: 50% 0%;
 }
 
