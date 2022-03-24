@@ -1,0 +1,61 @@
+package br.com.springboot.curso_jdev_treinamento.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
+@SequenceGenerator(name= "seq_body", sequenceName = "seq_body",allocationSize = 1, initialValue = 1)
+public class Estilo_Body implements Serializable {
+
+	private static final long serialVersionUID=1L;
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_body")
+	private Long id;
+	
+	private String propriedade;
+	
+	private String valor;
+	
+	private Long idAluno;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getPropriedade() {
+		return propriedade;
+	}
+
+	public void setPropriedade(String propriedade) {
+		this.propriedade = propriedade;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
+	public Long getIdAluno() {
+		return idAluno;
+	}
+
+	public void setIdAluno(Long idAluno) {
+		this.idAluno = idAluno;
+	}
+	
+	
+}
