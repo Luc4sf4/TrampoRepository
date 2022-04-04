@@ -298,23 +298,6 @@
 						}
 
 					}
-					function getListEstado() {
-						var estado = $('#estadoCivil').val();
-						$.ajax({
-							method : "GET",
-							url : "estadoCivil",
-							success : function(response) {
-
-								for (var i = 0; i < response.length; i++) {
-
-									console.log(response[i].id);
-									$('#cmbEstadoCivil').append(new Option(response[i].description, response[i].id));
-								}
-							}
-						}).fail(function(xhr, status, errorThrown) {
-							alert("Erro ao Buscar Usuário" + xhr.reponseText);
-						})
-					}
 
 					jQuery(document).ready(function() {
 						getListEstado();

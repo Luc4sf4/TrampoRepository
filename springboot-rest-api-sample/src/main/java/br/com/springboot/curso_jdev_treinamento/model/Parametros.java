@@ -29,7 +29,6 @@ public class Parametros implements Serializable {
 	private String title_album;
 	
 	private String title_video;
-	
 
 	private String parametro567;
 	

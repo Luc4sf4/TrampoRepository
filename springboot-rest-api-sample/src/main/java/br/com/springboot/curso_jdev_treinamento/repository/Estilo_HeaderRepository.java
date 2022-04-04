@@ -6,13 +6,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import br.com.springboot.curso_jdev_treinamento.model.Estilo_Header;
+import br.com.springboot.curso_jdev_treinamento.model.EstiloHeader;
 
 @Repository
-public interface Estilo_HeaderRepository extends JpaRepository<Estilo_Header, Long> {
-
-	@Query(value = "select u from Estilo_Header where upper (trim(u.propriedade)) like %?1%")
-	List<Estilo_Header> getEsitloHeader(String propriedade);
+public interface Estilo_HeaderRepository  extends JpaRepository<EstiloHeader, Long> {
+	
+	
+	@Query(value = "select u from EstiloHeader u where upper(trim(u.propiedade)) like %?1%")
+	List<EstiloHeader>getEstiloHeader (String propiedade);
+	
 	
 	
 }
+

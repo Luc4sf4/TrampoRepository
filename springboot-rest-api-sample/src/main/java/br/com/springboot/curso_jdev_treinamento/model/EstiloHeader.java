@@ -10,7 +10,7 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 @SequenceGenerator(name= "seq_header", sequenceName = "seq_header", allocationSize = 1, initialValue = 1)
-public class Estilo_Header implements Serializable  {
+public class EstiloHeader implements Serializable  {
 
 	
 	private static final long serialVersionUID= 1L;

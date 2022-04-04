@@ -27,6 +27,9 @@ public class Aluno  implements Serializable{
 	
 	private Long idEstadoCivil;
 
+	
+	
+	
 	public Long getIdEstadoCivil() {
 		return idEstadoCivil;
 	}

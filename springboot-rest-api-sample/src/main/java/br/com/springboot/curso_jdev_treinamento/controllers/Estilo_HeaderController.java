@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.springboot.curso_jdev_treinamento.model.Estilo_Body;
-import br.com.springboot.curso_jdev_treinamento.model.Estilo_Header;
+import br.com.springboot.curso_jdev_treinamento.model.EstiloHeader;
 import br.com.springboot.curso_jdev_treinamento.repository.Estilo_HeaderRepository;
 
 @RequestMapping("header")
@@ -24,27 +23,27 @@ import br.com.springboot.curso_jdev_treinamento.repository.Estilo_HeaderReposito
 public class Estilo_HeaderController {
 
 	@Autowired
-	private Estilo_HeaderRepository estilorepository;
+	private Estilo_HeaderRepository estiloHeaderRepository;
 	
 	
 	
 	@PostMapping()
 	@ResponseBody  
-	public ResponseEntity<Estilo_Header> salvarEstilo(@RequestBody Estilo_Header est) /* Recebe os dados para salvar */ {
+	public ResponseEntity<EstiloHeader> salvarEstilo(@RequestBody EstiloHeader est) /* Recebe os dados para salvar */ {
 
-		Estilo_Header estilo = estilorepository.save(est);
+		EstiloHeader estilo = estiloHeaderRepository.save(est);
 
-		return new ResponseEntity<Estilo_Header>(estilo, HttpStatus.CREATED);
+		return new ResponseEntity<EstiloHeader>(estilo, HttpStatus.CREATED);
 	}
 	
 	
 	@GetMapping(value = "/id")
 	@ResponseBody
-	ResponseEntity<Estilo_Header> getEstiloHeaderId(@RequestParam(name = "id") Long id) {
+	ResponseEntity<EstiloHeader> getEstiloHeaderId(@RequestParam(name = "id") Long id) {
 		
-		Estilo_Header id1= estilorepository.findById(id).get();
+		EstiloHeader id1= estiloHeaderRepository.findById(id).get();
 		
-		return new ResponseEntity<Estilo_Header>(id1,HttpStatus.OK);
+		return new ResponseEntity<EstiloHeader>(id1,HttpStatus.OK);
 		
 		
 		
@@ -52,11 +51,11 @@ public class Estilo_HeaderController {
 	
 	@GetMapping
 	@ResponseBody
-	public ResponseEntity<List<Estilo_Header>>getEstilo(){
+	public ResponseEntity<List<EstiloHeader>>getEstiloHeader(){
 		
-		List<Estilo_Header> esti= estilorepository.findAll();
+		List<EstiloHeader> propriedade= estiloHeaderRepository.findAll();
 		
-		return new ResponseEntity<List<Estilo_Header>>(esti,HttpStatus.OK); 
+		return new ResponseEntity<List<EstiloHeader>>(propriedade,HttpStatus.OK); 
 		
 	}
 	
@@ -64,7 +63,7 @@ public class Estilo_HeaderController {
 	@ResponseBody
 	ResponseEntity<String> delteEstiloHeader(@RequestParam Long id){
 		
-		estilorepository.deleteById(id);
+		estiloHeaderRepository.deleteById(id);
 		
 		return new ResponseEntity<String>("User deletado com sucesso", HttpStatus.OK);
 		
@@ -72,7 +71,7 @@ public class Estilo_HeaderController {
 	
 	@PutMapping
 	@ResponseBody
-	public ResponseEntity<?> updateEstilo(@RequestBody Estilo_Header propriedade){
+	public ResponseEntity<?> updateEstilo(@RequestBody EstiloHeader propriedade){
 		
 		
 		if(propriedade.getId() == null) {
@@ -80,9 +79,9 @@ public class Estilo_HeaderController {
 			return new ResponseEntity<String> ("id não informado para a autalização",HttpStatus.OK);
 		}
 		
-		Estilo_Header est = estilorepository.saveAndFlush(propriedade);
+		EstiloHeader est = estiloHeaderRepository.saveAndFlush(propriedade);
 		
-		return new ResponseEntity<Estilo_Header>(est,HttpStatus.OK);		
+		return new ResponseEntity<EstiloHeader>(est,HttpStatus.OK);		
 	}
 	
 	

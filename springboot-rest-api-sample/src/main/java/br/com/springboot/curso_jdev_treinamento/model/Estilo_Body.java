@@ -19,7 +19,7 @@ public class Estilo_Body implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_body")
 	private Long id;
 	
-	private String propriedade;
+	private String propiedade;
 	
 	private String valor;
 	
@@ -34,11 +34,11 @@ public class Estilo_Body implements Serializable {
 	}
 
 	public String getPropriedade() {
-		return propriedade;
+		return propiedade;
 	}
 
 	public void setPropriedade(String propriedade) {
-		this.propriedade = propriedade;
+		this.propiedade = propriedade;
 	}
 
 	public String getValor() {
