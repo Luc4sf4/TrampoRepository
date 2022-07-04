@@ -11,6 +11,6 @@ import br.com.springboot.curso_jdev_treinamento.model.Estilo_Body;
 @Repository
 public interface Estilo_BodyRepository extends JpaRepository<Estilo_Body, Long>   {
 
-	@Query(value= "select u from Estilo_Body u where upper(trim(u.valor)) like %?1%")
-	List<Estilo_Body> getEstiloBody(String propriedade);
+	@Query(value= "select u from Estilo_Body u where upper(trim(u.propiedade)) like %?1%")
+	List<Estilo_Body> getEstiloBody(String propiedade);
 }

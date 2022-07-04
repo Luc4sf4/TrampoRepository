@@ -57,13 +57,13 @@ public class Estilo_BodyController {
 	
 	@PutMapping
 	@ResponseBody
-	public ResponseEntity<?> updateBody (@RequestBody Estilo_Body propriedade) {
+	public ResponseEntity<?> updateBody (@RequestBody Estilo_Body propiedade) {
 		
-		if (propriedade.getId() == null) {
+		if (propiedade.getId() == null) {
 			return new ResponseEntity<String> ("Id não informado para a atualização", HttpStatus.OK);
 		}
 		
-		Estilo_Body est = bodyRepository.saveAndFlush(propriedade);
+		Estilo_Body est = bodyRepository.saveAndFlush(propiedade);
 		
 		return new ResponseEntity<Estilo_Body>(est,HttpStatus.OK);
 		

@@ -47,6 +47,12 @@ $(".close, .popup-overlay").on("click", function() {
 			
 			
 			
+			$('#myFunction').click(function(e) {
+			alert(51);
+				var popup = document.getElementById("myPopup");
+				popup.classList.toggle("show");
+			});
+			
 			
 				});	
 			
